@@ -1,0 +1,25 @@
+<header class="bg-violet-600 text-white">
+    <div class="container mx-auto flex justify-between items-center  py-4">
+        <div class="logo">
+            <a class="text-xl font-extrabold" routerLink="/">Food Order</a>
+        </div>
+        <nav class="flex gap-4">
+            <li class="list-none"><a routerLink="/login">Login</a></li>
+            <li class="menu-container list-none relative cursor-pointer">
+                <a routerLink="/dashboard">Aravinth Kumar</a>
+                <div class="menu z-10 absolute bg-violet-600 hidden   gap-4 rounded-md">
+                    <div>
+                        <a class="block hover:bg-violet-700 px-10 py-2" routerLink="/profile">Profile</a>
+                        <a class="block hover:bg-violet-700 px-10 py-2" routerLink="/orders">Orders</a>
+                        <a class="block hover:bg-violet-700 px-10 py-2">LogOut</a>
+                    </div>
+                </div>
+            </li>
+            <li class="list-none">
+                <a class="flex gap-1 items-center justify-center" routerLink="/cart-page">
+                    <div>Cart</div><div class="grid place-content-center w-5 h-5 bg-white rounded-full text-violet-600 ">3</div> 
+                </a>
+            </li>
+        </nav>
+    </div>
+</header>

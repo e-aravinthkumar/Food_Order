@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ngb-rating span{
+    margin-bottom: 5px;
+    color: rgb(190, 190, 0);
+    font-size: larger;
+}
