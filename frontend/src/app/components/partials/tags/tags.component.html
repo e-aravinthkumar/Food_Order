@@ -1,0 +1,5 @@
+<div class="flex flex-wrap justify-center gap-3">
+    <span class="bg-white px-3 py-2 text-violet-600 text-xs cursor-pointer rounded-full font-semibold" (click)="tagResult(tag.name)" *ngFor="let tag of tags">
+        {{tag.name}}({{tag.count}})
+    </span>
+</div>

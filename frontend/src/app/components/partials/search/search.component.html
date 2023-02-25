@@ -1,0 +1,5 @@
+<div class="flex justify-center gap-4 my-4">
+    <input class="w-[15rem] py-1 px-2 rounded-md" type="text" #s [value]="searchTerm" (keyup.enter)="search(s.value)">
+    <button class="text-violet-600 font-semibold" (click)="search(s.value)">Search</button>
+    <button class="text-violet-600 font-semibold" (click)="clearSearch()">Clear</button>
+</div>

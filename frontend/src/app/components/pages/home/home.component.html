@@ -1,60 +1,67 @@
-<ul class="food-list flex flex-wrap justify-center p-4 gap-4">
-    <li class="bg-white rounded-md overflow-hidden shadow-md" *ngFor="let food of foods">
-        <a routerLink="foods/{{food.id}}">
-        <img class="object-cover w-[20rem]" [src]="food.imgUrl" [alt]="food.name">
-        </a>
-        <div class="content mx-2 my-1">
-
-            <div class="flex justify-between my-2">
-                <span>
-                    <a routerLink="foods/{{food.id}}">
-                        {{food.name}}
-                    </a>
-                </span>
-                <span>
-                   <ng-container *ngIf="food.favorite">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-red-600">
-                        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                      </svg>                      
-                   </ng-container> 
-                   <ng-container *ngIf="!food.favorite">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-400">
-                        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                      </svg>                      
-                   </ng-container> 
-                </span>
-            </div>
-
-            <div class="flex justify-between items-center">
-                <ngb-rating [max]="5" [rate]="food.stars"></ngb-rating>
-                <div class="flex gap-1 items-center">
+<app-search></app-search>
+<app-tags></app-tags>
+<ng-container *ngIf="foods.length > 0">
+    <ul class="food-list flex flex-wrap justify-center p-4 gap-4">
+        <li class="bg-white rounded-md overflow-hidden shadow-md" *ngFor="let food of foods">
+            <a routerLink="foods/{{food.id}}">
+            <img class="object-cover w-[20rem]" [src]="food.imgUrl" [alt]="food.name">
+            </a>
+            <div class="content mx-2 my-1">
+    
+                <div class="flex justify-between my-2">
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-black">
-                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
-                          </svg>                          
+                        <a routerLink="foods/{{food.id}}">
+                            {{food.name}}
+                        </a>
                     </span>
-                    <span class="text-sm">
-                        {{food.cookTime}} mins
+                    <span>
+                       <ng-container *ngIf="food.favorite">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-red-600">
+                            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                          </svg>                      
+                       </ng-container> 
+                       <ng-container *ngIf="!food.favorite">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-400">
+                            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                          </svg>                      
+                       </ng-container> 
                     </span>
                 </div>
+    
+                <div class="flex justify-between items-center">
+                    <ngb-rating [max]="5" [rate]="food.stars" [readonly]="true" ></ngb-rating>
+                    <div class="flex gap-1 items-center">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-black">
+                                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
+                              </svg>                          
+                        </span>
+                        <span class="text-sm">
+                            {{food.cookTime}} mins
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="flex gap-2 my-2">
+                    <span class="bg-slate-400 text-white text-xs px-2 py-1 rounded-sm" *ngFor="let origin of food.origins">
+                        {{origin}}
+                    </span>
+                </div>
+    
+    
+                <div class="flex justify-between my-3">
+                    <span class="text-violet-600">
+                        {{ food.price | currency }}
+                    </span>
+                    <span>
+                        <a class="bg-violet-600 rounded-xl text-white px-2 py-1" routerLink="foods/{{food.id}}">View</a>
+                    </span>
+                </div>
+    
             </div>
-
-            <div class="flex gap-2 my-2">
-                <span class="bg-slate-400 text-white text-xs px-2 py-1 rounded-sm" *ngFor="let origin of food.origins">
-                    {{origin}}
-                </span>
-            </div>
-
-
-            <div class="flex justify-between my-3">
-                <span class="text-violet-600">
-                    {{ food.price | currency }}
-                </span>
-                <span>
-                    <a class="bg-violet-600 rounded-xl text-white px-2 py-1" routerLink="foods/{{food.id}}">View</a>
-                </span>
-            </div>
-
-        </div>
-    </li>
-</ul>
+        </li>
+    </ul>
+</ng-container>
+<ng-container *ngIf="foods.length === 0">
+    <h1 class="text-center font-semibold text-2xl text-violet-600 my-8">No Products</h1>
+</ng-container>
